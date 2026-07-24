@@ -6,7 +6,7 @@ export default function TaskList({ tasks, onToggle, onDelete }) {
   }
 
   return (
-    <section className="task-list">
+    <section className="card task-list">
       {tasks.map((task) => (
         <TaskItem
           key={task.id}

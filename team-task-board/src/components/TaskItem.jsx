@@ -6,13 +6,15 @@ const priorityClass = {
 
 export default function TaskItem({ task, onToggle, onDelete }) {
   return (
-    <article className={`card task-item ${task.done ? 'done' : ''}`}>
-      <div>
-        <h3>{task.title}</h3>
-        <p>Zuständig: {task.assignee}</p>
+    <article className={`task-item ${task.done ? 'done' : ''}`}>
+      <div className="task-item-body">
         <span className={`badge ${priorityClass[task.priority] ?? ''}`}>
-          {task.priority}
+          {task.priority[0]}
         </span>
+        <div className="task-item-text">
+          <h3>{task.title}</h3>
+          <p>{task.assignee}</p>
+        </div>
       </div>
 
       <div className="actions">
